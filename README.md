@@ -70,6 +70,7 @@ EXPOSE 8000
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 ## การติดตั้ง Nginx บน Windows 11
+![FastAPI Nginx Docker Architecture](./mnt/data/A_detailed_diagram_showing_a_system_architecture_w.png)
 
 
 1.ดาวน์โหลด Nginx:
