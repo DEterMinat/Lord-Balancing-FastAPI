@@ -35,6 +35,7 @@
 
 4.สร้าง Dockerfile:
 ตรวจสอบว่า Dockerfile ของคุณตั้งค่าไว้ดังนี้:
+   ```bash
 FROM python:3.9-slim
 
 WORKDIR /app
@@ -46,7 +47,7 @@ RUN pip install fastapi uvicorn
 EXPOSE 8000
 
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
-
+```
 ## การติดตั้ง Nginx บน Windows 11
 1.ดาวน์โหลด Nginx:
 ไปที่ Nginx Official Website และดาวน์โหลดเวอร์ชันที่เหมาะสมกับ Windows
@@ -56,18 +57,18 @@ CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
 
 3.รัน Nginx:
 เปิด Command Prompt หรือ PowerShell และเปลี่ยน directory:
-bash:
+```bash
 cd C:\nginx
 start nginx
-
+```
 4. ตรวจสอบการทำงาน:
 เปิดเว็บเบราว์เซอร์และไปที่ http://localhost
 
 ## การรันโปรเจค
 เพื่อเริ่มบริการทั้งหมด ให้รันคำสั่งต่อไปนี้ในเทอร์มินัล:
-
+```bash
 docker-compose up -d
-
+```
 คำสั่งนี้จะสร้าง Docker images และเริ่มคอนเทนเนอร์ที่กำหนดใน docker-compose.yml
 
 การเข้าถึงแอปพลิเคชัน
@@ -82,9 +83,9 @@ Nginx Load Balancer: http://localhost
 ## หมายเหตุ
 ตรวจสอบให้แน่ใจว่า Docker กำลังทำงานก่อนที่จะรันคำสั่ง
 หากคุณทำการเปลี่ยนแปลงโค้ดหรือการกำหนดค่า คุณอาจต้องสร้างคอนเทนเนอร์ใหม่โดยใช้:
-
+```bash
 docker-compose up -d --build
-
+```
 
 ### การใช้งาน
 
